@@ -99,7 +99,7 @@ exports.getCallback = (req, res, next) => {
                     { expiresIn: '1h' }
                   );
                   res.cookie('token', token);
-                  localStorage.setItem('token',token);
+                  res.cookir('isAuthenticated',true);
                   res.redirect('https://drooble.herokuapp.com/dashboard');
                 })
                 .catch((err) => {
