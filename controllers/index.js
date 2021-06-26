@@ -79,10 +79,10 @@ exports.getCallback = (req, res, next) => {
                   );
                   res.cookie('token', token);
                   res.cookie('isAuthenticated', true);
-                  res.redirect('http://localhost:3000/dashboard');
+                  res.redirect('https://drooble.herokuapp.com/dashboard');
                 })
                 .catch((err) => {
-                  res.redirect('http://localhost:3000/');
+                  res.redirect('https://drooble.herokuapp.com/');
                 });
             } else {
               DroobleLogin.saveSpotifyUser(spotifyApi, userData)
@@ -99,15 +99,15 @@ exports.getCallback = (req, res, next) => {
                     { expiresIn: '1h' }
                   );
                   res.cookie('token', token);
-                  res.redirect('http://localhost:3000/dashboard');
+                  res.redirect('https://drooble.herokuapp.com/dashboard');
                 })
                 .catch((err) => {
-                  res.redirect('http://localhost:3000/');
+                  res.redirect('https://drooble.herokuapp.com/');
                 });
             }
           })
           .catch((err) => {
-            res.redirect('http://localhost:3000/');
+            res.redirect('https://drooble.herokuapp.com/');
           });
       });
     })
