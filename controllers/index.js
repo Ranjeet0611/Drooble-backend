@@ -77,6 +77,7 @@ exports.getCallback = (req, res, next) => {
                     'drooble@ranjeetSingh@brooble',
                     { expiresIn: '1h' }
                   );
+                  sessionStorage.setItem('token',token);
                   res.cookie('token', token);
                   res.cookie('isAuthenticated', true);
                   res.redirect('https://drooble.herokuapp.com/dashboard');
