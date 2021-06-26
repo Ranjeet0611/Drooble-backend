@@ -1,0 +1,17 @@
+const express  = require('express');
+const router = express.Router();
+const isAuth = require('../middleware/is-auth');
+const trackController = require('../controllers/Track');
+const albumController = require('../controllers/Album');
+const authController = require('../controllers/index');
+const loginController = require('../controllers/login');
+const userController = require('../controllers/user');
+router.put('/tracks/:trackId',isAuth,trackController.saveToMyTrack);
+router.delete('/tracks/:trackId',isAuth,trackController.removeTrackFromLibrary);
+router.put('/albums/:albumId',isAuth,albumController.saveAlbumToLibrary);
+router.delete('/albums/:albumId',isAuth,albumController.removeAlbumFromLibrary);
+router.get('/albums',isAuth,albumController.getUserSavedAlbum);
+router.post('/location',isAuth,loginController.getLocation);
+router.get('/login',authController.getLogin);
+router.get('/profile',isAuth,userController.getUserProfile);
+module.exports = router;
