@@ -6,7 +6,7 @@ const Drooble = require('../models/Drooble');
 var spotifyApi = new SpotifyWebApi({
   clientId: 'dc8cee432bcf412fb5eb626b56c0e77f',
   clientSecret: '1dd3df252a7442b98535e78a50a278b8',
-  redirectUri: 'https://drooble-backend.herokuapp.com/auth/callback/auth/callback',
+  redirectUri: 'https://drooble-backend.herokuapp.com/auth/callback',
 });
 let access_token = '';
 
